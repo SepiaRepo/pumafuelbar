@@ -13,7 +13,6 @@
     <thead>
         <tr>
             <th>
-       Previous rates:  @Model.lv
                 @*@Html.DisplayNameFor(model => model.rate)*@
             </th>
             <th></th>
@@ -26,17 +25,31 @@
                
                    @try
                 {
-                    if (Model.fv > Model.lv)
+                    if (Model.lv > Model.fv)
                     {
                         <p style="color:red">
-                            @Model.fv
+                         Previous Price: @Model.lv
                             <img src="~/css/media/up.png" />
                         </p>
                     }
                     else
                     {
                         <p style="color:green">
-                            @Model.fv
+                            Previous Price: @Model.lv
+                            <img src="~/css/media/down.png" />
+                        </p>
+                    }
+                    if (Model.fv > Model.lv)
+                    {
+                        <p style="color:red">
+                           Latest Price: @Model.fv
+                            <img src="~/css/media/up.png" />
+                        </p>
+                    }
+                    else
+                    {
+                        <p style="color:green">
+                          Latest Price: @Model.fv
                             <img src="~/css/media/down.png" />
                         </p>
                     }
